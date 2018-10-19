@@ -26,9 +26,9 @@ def connect_db():
 
     else:                                       # running on CF
         env_vars = os.environ['VCAP_SERVICES']
-        rediscloud_service = json.loads(env_vars)['rediscloud'][0]
+        rediscloud_service = json.loads(env_vars)['p-redis'][0]
         credentials = rediscloud_service['credentials']
-        DB_HOST = credentials['hostname']
+        DB_HOST = credentials['host']
         DB_PORT = credentials['port']
         DB_PW = password=credentials['password']
         REDIS_DB = 0

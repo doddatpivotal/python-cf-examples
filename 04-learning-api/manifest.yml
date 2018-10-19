@@ -3,7 +3,7 @@ applications:
 - name: learning-api
   memory: 512M
   instances: 1
-  domain: cfapps.io
+#  domain: cfapps.io
   random-route: true
   path: .
   buildpack: python_buildpack

@@ -15,7 +15,7 @@ This app demonstrates a very simple API that can be used to create model instanc
 <h2>Create a model</h2>
 
 <pre>
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "model_type": "LinearRegression", "retrain_counter": 10}' http://{{ host }}/createModel
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "model_type": "LinearRegression", "retrain_counter": 10}' https://{{ host }}/createModel
 </pre>
 
 
@@ -24,33 +24,33 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1",
 This example shows how to send data into the model created before, s.t. the linear regression model becomes y = x. Since we set the retrain_counter to 10 previously, the model will retrain after it received the 10th data instance.
 
 <pre>
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 1, "label": 1}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 2, "label": 2}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 3, "label": 3}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 4, "label": 4}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 5, "label": 5}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 6, "label": 6}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 7, "label": 7}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 8, "label": 8}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 9, "label": 9}' http://{{ host }}/ingest
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 10, "label": 10}' http://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 1, "label": 1}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 2, "label": 2}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 3, "label": 3}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 4, "label": 4}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 5, "label": 5}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 6, "label": 6}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 7, "label": 7}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 8, "label": 8}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 9, "label": 9}' https://{{ host }}/ingest
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 10, "label": 10}' https://{{ host }}/ingest
 </pre>
 
 <h2>Score a new datapoint</h2>
 Now we can score a new datapoint by using the /score endpoint:
 <pre>
-curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 3.5}' http://{{ host }}/score
+curl -i -X POST -H "Content-Type: application/json" -d '{"model_name": "model1", "input": 3.5}' https://{{ host }}/score
 </pre>
 
 <h2>Look at all created models</h2>
 
 There's a very rudimentary view on the redis set of all models that have been created:
-<a href="http://{{ host }}/models">http://{{ host }}/models</a>.
+<a href="https://{{ host }}/models">https://{{ host }}/models</a>.
 
 <h2>Look at model details</h2>
 
 This lets you check out the status of the previously created model as well as its trained parameters:
-<a href="http://{{ host }}/models/model1">http://{{ host }}/models/model1</a>
+<a href="https://{{ host }}/models/model1">https://{{ host }}/models/model1</a>
 
 </p>
 </body>
